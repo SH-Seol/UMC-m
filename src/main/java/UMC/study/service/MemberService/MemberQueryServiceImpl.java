@@ -1,2 +1,5 @@
-package UMC.study.service.MemberService;public class MemberQueryServiceImpl {
+package UMC.study.service.MemberService;
+
+public class MemberQueryServiceImpl {
+
 }

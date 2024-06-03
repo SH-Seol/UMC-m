@@ -1,2 +1,4 @@
-package UMC.study.service.MemberService;public interface MemberQueryService {
+package UMC.study.service.MemberService;
+
+public interface MemberQueryService {
 }

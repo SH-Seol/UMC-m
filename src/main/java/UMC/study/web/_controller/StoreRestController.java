@@ -25,5 +25,4 @@ public class StoreRestController {
         Review review = storeCommandService.addReview(memberId, storeId, request);
         return ApiResponse.onSuccess(ReviewConverter.toReviewResultDTO(review));
     }
-
 }

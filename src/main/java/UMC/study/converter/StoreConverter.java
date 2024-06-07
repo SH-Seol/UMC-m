@@ -1,2 +1,4 @@
-package UMC.study.converter;public class StoreConverter {
+package UMC.study.converter;
+
+public class StoreConverter {
 }

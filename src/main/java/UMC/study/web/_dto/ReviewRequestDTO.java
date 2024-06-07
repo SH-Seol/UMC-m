@@ -11,6 +11,8 @@ public class ReviewRequestDTO {
     @Getter
     public static class ReviewDTO{
         @NotBlank
+        private String title;
+        @NotBlank
         private String content;
         @NotNull
         private int rating;

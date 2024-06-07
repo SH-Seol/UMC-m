@@ -2,7 +2,6 @@ package UMC.study.service.ReviewService;
 
 import UMC.study.converter.ReviewConverter;
 import UMC.study.domain.Review;
-import UMC.study.domain.Store;
 import UMC.study.repository.MemberRepository;
 import UMC.study.repository.ReviewRepository;
 import UMC.study.repository.StoreRepository;
@@ -14,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
-public class ReviewServiceImpl implements ReviewService {
+public class StoreCommandServiceImpl implements StoreCommandService {
 
     private ReviewRepository reviewRepository;
     private StoreRepository storeRepository;

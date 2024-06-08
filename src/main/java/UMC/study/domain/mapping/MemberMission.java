@@ -29,7 +29,6 @@ public class MemberMission extends BaseEntity {
     @JoinColumn(name = "mission_id")
     private Mission mission;
 
-
     public void setMember(Member member) {
         if(this.member != null){
             member.getMemberMissionList().remove(this);

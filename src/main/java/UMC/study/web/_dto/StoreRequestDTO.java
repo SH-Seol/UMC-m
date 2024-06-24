@@ -5,9 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 
-import java.time.LocalDate;
-
-public class ReviewRequestDTO {
+public class StoreRequestDTO {
     @Getter
     public static class ReviewDTO{
         @NotBlank
@@ -16,6 +14,11 @@ public class ReviewRequestDTO {
         private String content;
         @NotNull
         private int rating;
+    }
+
+    @Getter
+    public static class MissionDTO{
+
     }
 
 }

@@ -1,6 +1,6 @@
 package UMC.study.service.ReviewService;
 
-import UMC.study.converter.ReviewConverter;
+import UMC.study.converter.StoreConverter;
 import UMC.study.domain.Mission;
 import UMC.study.domain.Review;
 import UMC.study.domain.Store;
@@ -10,7 +10,7 @@ import UMC.study.repository.ReviewRepository;
 import UMC.study.repository.StoreRepository;
 import UMC.study.web._dto.MissionRequestDTO;
 import UMC.study.web._dto.MissionResponseDTO;
-import UMC.study.web._dto.ReviewRequestDTO;
+import UMC.study.web._dto.StoreRequestDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,9 +27,9 @@ public class StoreCommandServiceImpl implements StoreCommandService {
 
     @Override
     @Transactional
-    public Review addReview(Long memberId, Long storeId, ReviewRequestDTO.ReviewDTO request) {
+    public Review addReview(Long memberId, Long storeId, StoreRequestDTO.ReviewDTO request) {
 
-        Review newReview = ReviewConverter.toReview(request);
+        Review newReview = StoreConverter.toReview(request);
         newReview.setMember(memberRepository.findById(memberId).get());
         newReview.setStore(storeRepository.findById(storeId).get());
 

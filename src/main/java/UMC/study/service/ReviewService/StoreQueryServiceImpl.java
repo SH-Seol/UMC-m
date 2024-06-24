@@ -4,15 +4,21 @@ import UMC.study.domain.Review;
 import UMC.study.domain.Store;
 import UMC.study.repository.ReviewRepository;
 import UMC.study.repository.StoreRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
+@Service
+@RequiredArgsConstructor
+@Transactional(readOnly = true)
 public class StoreQueryServiceImpl implements StoreQueryService {
 
-    StoreRepository storeRepository;
-    ReviewRepository reviewRepository;
+    private final StoreRepository storeRepository;
+    private final ReviewRepository reviewRepository;
 
     @Override
     public Optional<Store> findStore(Long storeId){

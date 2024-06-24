@@ -4,7 +4,10 @@ import UMC.study.category.ExistCategories;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -24,4 +27,13 @@ public class MemberRequestDTO {
         @ExistCategories
         List<Long> preferCategory;
     }
+    @Builder
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class MemberMissionRequestDTO{
+        @NotBlank
+        String memberId;
+    }
+
 }

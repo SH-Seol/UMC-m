@@ -18,7 +18,8 @@ public class StoreRequestDTO {
 
     @Getter
     public static class MissionDTO{
-
+        @NotNull
+        private Long storeId;
     }
 
 }

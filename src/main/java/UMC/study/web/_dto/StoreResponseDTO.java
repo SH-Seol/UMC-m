@@ -36,7 +36,7 @@ public class StoreResponseDTO {
     @Getter
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class ReviewPreviewDTO{
+    public static class ReviewPreviewDTO {
         String ownerNickname;
         Integer rating;
         String content;
@@ -46,8 +46,22 @@ public class StoreResponseDTO {
     @Getter
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class MissionResultDTO{
-
+    public static class StoreMissionListDTO {
+        List<StoreMissionDTO> missionList;
+        Integer listSize;
+        Integer totalPage;
+        Long totalElements;
+        Boolean isFirst;
+        Boolean isLast;
+    }
+    @Builder
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class StoreMissionDTO {
+        String content;
+        Integer point;
+        LocalDate dueDate;
     }
 
 }

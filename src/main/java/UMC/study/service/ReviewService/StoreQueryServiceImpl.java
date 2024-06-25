@@ -1,7 +1,9 @@
 package UMC.study.service.ReviewService;
 
+import UMC.study.domain.Mission;
 import UMC.study.domain.Review;
 import UMC.study.domain.Store;
+import UMC.study.repository.MissionRepository;
 import UMC.study.repository.ReviewRepository;
 import UMC.study.repository.StoreRepository;
 import lombok.RequiredArgsConstructor;
@@ -19,6 +21,7 @@ public class StoreQueryServiceImpl implements StoreQueryService {
 
     private final StoreRepository storeRepository;
     private final ReviewRepository reviewRepository;
+    private final MissionRepository missionRepository;
 
     @Override
     public Optional<Store> findStore(Long storeId){
@@ -33,5 +36,13 @@ public class StoreQueryServiceImpl implements StoreQueryService {
         Page<Review> StorePage = reviewRepository.findAllByStore(store, PageRequest.of(page, 10));
 
         return StorePage;
+    }
+
+    @Override
+    public Page<Mission> getMissionList(Long storeId, Integer page){
+        Store store = storeRepository.findById(storeId).get();
+        Page<Mission> MissionPage = missionRepository.findMissionsByStore(store, PageRequest.of(page, 10));
+
+        return MissionPage;
     }
 }

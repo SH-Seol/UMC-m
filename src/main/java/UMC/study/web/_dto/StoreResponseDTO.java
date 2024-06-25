@@ -24,7 +24,7 @@ public class StoreResponseDTO {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class ReviewPreviewListDTO{
-        List<StoreResponseDTO.ReviewPreviewDTO> reviewList;
+        List<ReviewPreviewDTO> reviewList;
         Integer listSize;
         Integer totalPage;
         Long totalElements;
@@ -63,5 +63,4 @@ public class StoreResponseDTO {
         Integer point;
         LocalDate dueDate;
     }
-
 }

@@ -1,6 +1,8 @@
 package UMC.study.converter;
 
+import UMC.study.domain.Mission;
 import UMC.study.domain.Review;
+import UMC.study.domain.Store;
 import UMC.study.web._dto.StoreRequestDTO;
 import UMC.study.web._dto.StoreResponseDTO;
 import org.springframework.data.domain.Page;
@@ -50,5 +52,25 @@ public class StoreConverter {
                 .reviewList(reviewPreviewDTOList)
                 .build();
 
+    }
+
+    public static StoreResponseDTO.StoreMissionDTO storeMissionDTO(Mission mission){
+
+        return StoreResponseDTO.StoreMissionDTO.builder()
+                .content(mission.getContent())
+                .point(mission.getPoint())
+                .dueDate(mission.getDueDate())
+                .build();
+    }
+    public static StoreResponseDTO.StoreMissionListDTO storeMissionListDTO(Page<Mission> missionList){
+        List<StoreResponseDTO.StoreMissionDTO> storeMissionDTOList = missionList.stream()
+                .map(StoreConverter::storeMissionDTO).collect(Collectors.toList());
+        return StoreResponseDTO.StoreMissionListDTO.builder()
+                .isLast(missionList.isLast())
+                .isFirst(missionList.isFirst())
+                .totalPage(missionList.getTotalPages())
+                .totalElements(missionList.getTotalElements())
+                .listSize(storeMissionDTOList.size())
+                .missionList(storeMissionDTOList).build();
     }
 }

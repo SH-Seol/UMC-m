@@ -2,6 +2,7 @@ package UMC.study.service.MemberService;
 
 import UMC.study.domain.Member;
 import UMC.study.domain.Review;
+import UMC.study.domain.mapping.MemberMission;
 import UMC.study.repository.MemberRepository;
 import UMC.study.repository.ReviewRepository;
 import lombok.RequiredArgsConstructor;
@@ -31,5 +32,10 @@ public class MemberQueryServiceImpl implements MemberQueryService {
         Page<Review> memberPage = reviewRepository.findAllByMember(member, PageRequest.of(page, 10));
 
         return memberPage;
+    }
+
+    @Override
+    public Page<MemberMission> getMemberMissionList(Long memberId, Integer page){
+        Member member = memberRepository.findById(memberId).orElse(null);
     }
 }

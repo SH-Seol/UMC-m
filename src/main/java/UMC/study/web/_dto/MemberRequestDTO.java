@@ -1,6 +1,7 @@
 package UMC.study.web._dto;
 
 import UMC.study.category.ExistCategories;
+import UMC.study.domain.enums.MissionStatus;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -31,9 +32,8 @@ public class MemberRequestDTO {
     @Getter
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class MemberMissionRequestDTO{
+    public static class MemberReviewRequestDTO {
         @NotBlank
         String memberId;
     }
-
 }

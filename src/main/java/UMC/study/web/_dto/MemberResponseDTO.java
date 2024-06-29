@@ -23,8 +23,8 @@ public class MemberResponseDTO {
     @Getter
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class MemberMissionResponseDTO {
-        List<MemberResponseDTO.MemberMissionPreviewDTO> reviewList;
+    public static class MemberReviewResponseDTO {
+        List<MemberReviewPreviewDTO> reviewList;
         Integer listSize;
         Integer totalPage;
         Long totalElements;
@@ -36,11 +36,12 @@ public class MemberResponseDTO {
     @Getter
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class MemberMissionPreviewDTO{
+    public static class MemberReviewPreviewDTO {
         Long memberId;
         Long missionId;
         String content;
         Integer rating;
         LocalDateTime createdAt;
     }
+
 }

@@ -44,7 +44,7 @@ public class MemberRestController {
             @Parameter(name = "memberId", description = "멤버의 아이디, path variable입니다."),
             @Parameter(name = "page", description = "페이지 번호 0번이 1 페이지입니다.")
     })
-    public ApiResponse<MemberResponseDTO.MemberMissionResponseDTO> getReviews(@ExistMember @PathVariable(name = "memberId") Long memberId, @RequestParam(name = "page") Integer page){
+    public ApiResponse<MemberResponseDTO.MemberReviewResponseDTO> getReviews(@ExistMember @PathVariable(name = "memberId") Long memberId, @RequestParam(name = "page") Integer page){
         memberQueryServiceImpl.getReviewList(memberId, page);
         return null;
     }
